@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">PS Checklist</title>
+  <desc id="desc">An illustrative contest board with a grid of problem progress marks.</desc>
+  <rect width="1200" height="630" fill="#eef0f7"/>
+  <rect x="135" y="175" width="930" height="340" rx="14" fill="#fafbfe" stroke="#6575a0" stroke-width="4"/>
+  <path d="M135 255h930m-700-80v340m140-340v340m140-340v340m140-340v340m140-340v340M135 340h930M135 425h930" fill="none" stroke="#d5dbea" stroke-width="3"/>
+  <g fill="#344570" font-family="system-ui, sans-serif">
+    <text x="600" y="112" font-size="34" font-weight="600" text-anchor="middle">PS Checklist</text>
+    <text x="185" y="230" font-size="25">Contest</text>
+    <text x="185" y="310" font-size="25">ICPC</text>
+    <text x="185" y="395" font-size="25">Olympiad</text>
+    <text x="185" y="480" font-size="25">Practice</text>
+    <g text-anchor="middle" font-size="24">
+      <text x="435" y="230">A</text><text x="575" y="230">B</text><text x="715" y="230">C</text><text x="855" y="230">D</text><text x="995" y="230">E</text>
+    </g>
+  </g>
+  <g fill="#3c7e6c">
+    <circle cx="435" cy="298" r="19"/><circle cx="575" cy="298" r="19"/><circle cx="715" cy="298" r="19"/>
+    <circle cx="435" cy="383" r="19"/><circle cx="575" cy="383" r="19"/>
+    <circle cx="435" cy="468" r="19"/>
+  </g>
+  <g fill="#d8deec">
+    <circle cx="855" cy="298" r="19"/><circle cx="995" cy="298" r="19"/>
+    <circle cx="715" cy="383" r="19"/><circle cx="855" cy="383" r="19"/><circle cx="995" cy="383" r="19"/>
+    <circle cx="575" cy="468" r="19"/><circle cx="715" cy="468" r="19"/><circle cx="855" cy="468" r="19"/><circle cx="995" cy="468" r="19"/>
+  </g>
+  <path d="m425 298 7 7 13-15m120 8 7 7 13-15m120 8 7 7 13-15m-290 93 7 7 13-15m120 8 7 7 13-15m-150 93 7 7 13-15" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,189 +1,165 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
-  social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
-
+  name: Jaemin Park
+  email: arnoldpark03@gmail.com
+  website: https://arnold518.github.io/
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Seoul National University
+        area: Computer Science and Engineering
+        location: Seoul, Korea
+        start_date: "2022"
+        end_date: present
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+          - "GPA: 3.47 / 4.3; major GPA: 3.77 / 4.3."
+          - "Coursework: object-oriented and functional programming, automata theory, data structures, algorithms, computer architecture, modern algebra,
+            and mathematical analysis."
+      - institution: Gyeonggi Science High School
+        location: Suwon, Korea
+        start_date: "2019"
+        end_date: "2021"
         highlights:
-          - Description 1.
-          - Description 2.
-
+          - "GPA: 4.03 / 4.3."
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Huawei Technologies, Hong Kong Research Center
+        position: Research Intern
+        start_date: "2025"
+        end_date: "2025"
+      - company: Korean IOI Training Camp
+        position: Teaching Assistant
+        start_date: "2021"
+        end_date: "2024"
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
+          - Assisted in teaching algorithms to more than 50 candidates for the Korean IOI delegation.
+    Research:
+      - label: 2021 · Data Structure for Maintaining Kth Maximum / Minimum Element of Polynomial Functions
+        details: Developed algorithms for maintaining order statistics of linear functions using geometric transformations, Modified Quad Tree,
+          and Persistent Angular Sorting. Generalized Persistent Angular Sorting to polynomial functions and implemented bucket-based variants.
+      - label: 2020 · Competitive Reinforcement Learning for Graph Coloring Games
+        details: Devised a two-player graph game to identify vertices important to graph connectivity. Applied reinforcement learning with DQN,
+          DDQN, and D3QN, and evaluated strategies on large graphs.
+      - label: 2020 · New Algorithm for Maintaining Lower/Upper Envelope of Similar Convex Figures
+        details: Extended Li Chao trees to maintain envelopes of quadratic functions. Proved applicability to similar convex figures and implemented
+          bucket-based and divide-and-conquer variants.
+      - label: 2019 · New Techniques for Dynamic Programming Optimization using Convex Hull and Segment Tree
+        details: Implemented dynamic convex hulls using splay trees for dynamic programming optimization. Developed Quad Li Chao trees and segment
+          trees containing convex hulls.
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: Reinventing the Wheel
+        url: https://github.com/arnold518/reinventing-the-wheel
+        summary: CircuitSim, a digital logic simulator that builds from gates and arithmetic circuits through memory systems to single-cycle and
+          pipelined RV32I processors.
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+          - Interactive circuit examples and component documentation.
+          - Timing models and experiments comparing processor implementations.
+      - name: PS Checklist
+        url: https://github.com/arnold518/ps-checklist
+        summary: A beta application for organizing programming contests, tracking problem progress, and recording practice sessions.
+        highlights:
+          - ICPC and Olympiad catalogs, with Codeforces and AtCoder contest imports.
+          - Shared problem status, dated practice records, and a workflow for curating contest resources.
+    Awards:
+      - title: 48th ICPC World Finals
+        date: "2024"
+        summary: 9th place, bronze medal · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Pacific Championship
+        date: "2024"
+        summary: 1st place, champion · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2024"
+        summary: 10th place · Team aespa
+        category: competitive-programming
+        selected: false
+      - title: ICPC Asia Hue City Regional
+        date: "2023"
+        summary: 1st place, champion · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2023"
+        summary: 3rd place · Team NewTrend
+        category: competitive-programming
+        selected: false
+      - title: Samsung Collegiate Programming Cup
+        date: "2023"
+        summary: 2nd prize
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2022"
+        summary: 4th place · Team NewTrend
+        category: competitive-programming
+        selected: false
+      - title: Samsung Collegiate Programming Cup
+        date: "2022"
+        summary: 4th prize
+        category: competitive-programming
+        selected: false
+      - title: Korean Selection Test for the International Olympiad in Informatics
+        date: "2021"
+        summary: 6th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2021"
+        summary: Silver prize, 6th place
+        category: competitive-programming
+        selected: false
+      - title: Nexon Youth Programming Challenge
+        date: "2021"
+        summary: Bronze prize, 4th place
+        category: competitive-programming
+        selected: false
+      - title: Google Code Jam, Round 3
+        date: "2021"
+        summary: 196th place
+        category: competitive-programming
+        selected: false
+      - title: Reply Code Challenge, Teen Edition
+        date: "2021"
+        summary: 4th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2020"
+        summary: Silver prize, 5th place
+        category: competitive-programming
+        selected: false
+      - title: Nexon Youth Programming Challenge
+        date: "2020"
+        summary: Bronze prize, 8th place
+        category: competitive-programming
+        selected: false
+      - title: Google Kick Start, Round B
+        date: "2020"
+        summary: 28th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2019"
+        summary: Silver prize
+        category: competitive-programming
+        selected: false
+      - title: Samsung Humantech Paper Award, Mathematics / Data Processing
+        date: "2021"
+        summary: Gold prize
+        category: research
+      - title: Samsung Humantech Paper Award, Mathematics / Data Processing
+        date: "2020"
+        summary: Bronze prize
+        category: research
+    Skills:
+      - name: C/C++
+        level: Fluent
+      - name: Java
+        level: Intermediate
+      - name: Python
+        level: Intermediate
+      - name: Scala
+        level: Basic
+    Competitive Programming:
+      - label: Codeforces
+        details: International Grandmaster.
