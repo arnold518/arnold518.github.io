@@ -1,0 +1,16 @@
+{% assign award_years = include.awards | group_by: 'date' %}
+<ul class="cv-award-years" role="list">
+  {% for year in award_years %}
+    <li class="cv-award-year">
+      <span class="cv-date">{{ year.name | escape }}</span>
+      <ul class="cv-award-list" role="list">
+        {% for award in year.items %}
+          <li class="cv-award{% if award.selected %} cv-award-selected{% endif %}">
+            <span class="cv-award-title">{{ award.title | escape }}</span>
+            <span class="cv-award-result">{{ award.summary | escape }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

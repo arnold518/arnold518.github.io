@@ -1,0 +1,8 @@
+{%- if include.entry.date -%}
+  {{- include.entry.date | escape -}}
+{%- elsif include.entry.start_date -%}
+  {{- include.entry.start_date | escape -}}
+  {%- if include.entry.end_date and include.entry.end_date != include.entry.start_date %}
+    – {{ include.entry.end_date | replace: 'present', 'Present' | escape }}
+  {%- endif -%}
+{%- endif -%}

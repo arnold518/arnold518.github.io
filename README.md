@@ -1,1 +1,103 @@
-# arnold518.github.io
+# Jaemin Park
+
+Personal CV and project website at https://arnold518.github.io/, built with [al-folio](https://github.com/alshedivat/al-folio).
+
+## Branches
+
+- `template/al-folio`: an unmodified snapshot of upstream al-folio at `f2a2765c8a9413f6ec703fc02070fbe6becf1572`. Its tracked tree matches upstream exactly.
+- `site/jaemin-park`: the personalized website, based on the template branch.
+- `main`: the original site history; the personal branch can be reviewed before merging.
+
+## Content
+
+- `_pages/about.md`: homepage and biography.
+- `assets/img/profile.jpg`: homepage portrait supplied by Jaemin Park.
+- `_data/cv.yml`: education, experience, research, projects, skills, and awards. Awards are also used by the homepage and awards page; `selected: true` selects homepage highlights.
+- `_pages/cv.md`: the web CV, rendered by `_includes/cv_profile.liquid` with scoped styles in `assets/css/cv.css`. Its date helper formats single-year entries, and its award helper groups the complete history by category and year. Research data use separate titles, dates, and highlights.
+- `_projects/`: Reinventing the Wheel and PS Checklist.
+- `_data/blogs.yml`: the three blogs, shared by the homepage and Blogs page through `_includes/blog_cards.liquid`, which reuses the Projects cards.
+- `cv/source/`: the editable TeX CV project, including `resume.tex`, section files, fonts, and `russell.cls`.
+- `cv/archive/`: the original supplied ZIP and PDF, retained as historical snapshots.
+- `assets/pdf/cv.pdf`: the CV compiled from the current TeX source, linked by the CV page and homepage download.
+- `_config.yml`: site settings, with an empty `baseurl` for the account homepage.
+
+The Blogs section is at `/blogs/`, with `/notes/` retained as an alias. Its cards open the existing sites at `/ps-notes/`, `/math-notes/`, and `/cs-notes/`.
+
+For CV changes, the agent updates the website content and TeX source together under [AGENTS.md](AGENTS.md). The formats remain independently editable; there is no generator translating one into the other. See [CV maintenance](cv/README.md) for source layout, PDF build commands, and the import notes.
+
+The supplied TeX assets are the current reference. Rebuild the PDF locally with `./cv/build.sh`, review `cv/build/resume.pdf`, and copy it to `assets/pdf/cv.pdf` as described in the maintenance guide. GitHub Actions compiles and includes a fresh PDF in every site build.
+
+## Local development
+
+Use Ruby 3.3 with development headers and Bundler 4.0.6, plus Node.js 20 or newer for formatting and JavaScript tooling:
+
+```bash
+bundle install
+npm ci
+bundle exec jekyll serve
+```
+
+Open http://localhost:4000/. Build the static site with:
+
+```bash
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+The upstream [Docker instructions](docs/INSTALL.md#local-setup-using-docker-recommended) are another option.
+
+## Hosted preview on port 1111
+
+Install or refresh the user service:
+
+```bash
+./systemd/install.sh
+```
+
+The service runs Jekyll in Docker with live rebuilding. It uses a persistent dependency cache at `~/.cache/cv-blog/gems` and generates preview output in the user runtime directory. Docker and `/usr/bin/node` are required. The initial start installs any missing gems.
+
+```bash
+systemctl --user status cv-blog.service
+systemctl --user restart cv-blog.service
+systemctl --user stop cv-blog.service
+journalctl --user -u cv-blog.service -f
+```
+
+Open <http://localhost:1111/absproxy/1111/>. The preview's `/absproxy/1111` prefix supports the existing host proxy; the published GitHub Pages site keeps an empty `baseurl`.
+
+After editing content, refresh the browser to see the rebuilt page. Restart the service after changing `_config.yml`, `Gemfile`, or `Gemfile.lock`.
+
+In shells without the user session environment, prefix `systemctl` and `journalctl` commands with `XDG_RUNTIME_DIR=/run/user/$(id -u) DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus`. The installer sets these automatically.
+
+## GitHub Pages
+
+The workflow runs on every branch push except `gh-pages` and the untouched `template/al-folio`, on pull requests to `main`, and on manual runs. It compiles the TeX CV first and uploads a `jaemin-park-cv` artifact, available from that Actions run for 30 days. The Jekyll job downloads this fresh PDF into `assets/pdf/cv.pdf` before building, so a failed CV compilation blocks publication. Only pushes or manual runs on `main` publish the built site to `gh-pages`; other branches build and retain the PDF artifact for review.
+
+Actions publishes generated output without committing the rebuilt PDF back to the source branch. For the local live preview, rebuild and copy the PDF locally after TeX changes.
+
+1. Push the template and personal branches:
+
+   ```bash
+   git push -u origin template/al-folio
+   git push -u origin site/jaemin-park
+   ```
+
+2. Merge the reviewed personal branch into `main` and push it:
+
+   ```bash
+   git switch main
+   git merge --ff-only site/jaemin-park
+   git push origin main
+   ```
+
+3. In the repository's **Actions** tab, wait for **Build and deploy site** to succeed. This creates or updates `gh-pages` with the generated website.
+4. In **Settings → Pages → Build and deployment**, select **Deploy from a branch**, choose **gh-pages** and **/(root)**, then save. This matches the current workflow, which commits the built site to a branch. See the [GitHub publishing source guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-from-a-branch).
+5. Visit <https://arnold518.github.io/> after GitHub finishes the Pages deployment. Later pushes to `main` rebuild and publish automatically.
+
+If `main` advances independently, merge its updates into the personal branch before the fast-forward step. The al-folio template branch remains the baseline for comparison.
+
+## Records
+
+- [CV blog plan and template research](docs/records/2026-10-19-cv-blog-plan.md)
+- [Personalization record](docs/records/2026-10-20-al-folio-personalization.md)
+
+The original al-folio MIT license is retained in [LICENSE](LICENSE).

@@ -1,0 +1,167 @@
+{% assign cv = site.data.cv.cv %}
+<article class="cv-document" aria-labelledby="cv-name">
+  <header class="cv-header">
+    <div class="cv-identity">
+      <p class="cv-eyebrow">Curriculum vitae</p>
+      <h1 id="cv-name">{{ cv.name | escape }}</h1>
+      <ul class="cv-contact" role="list">
+        <li>
+          <a href="mailto:{{ cv.email | escape }}">{{ cv.email | escape }}</a>
+        </li>
+        <li>
+          <a href="{{ cv.website | escape }}">{{ cv.website | remove_first: 'https://' | remove_first: 'http://' | escape }}</a>
+        </li>
+        {% if site.data.socials.github_username %}
+          <li><a href="https://github.com/{{ site.data.socials.github_username | escape }}">GitHub</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <a class="cv-download" href="{{ page.cv_pdf | relative_url }}" download="Jaemin-Park-CV.pdf">
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/>
+      </svg>
+      Download PDF
+    </a>
+  </header>
+
+  {% for entry in cv.sections['Competitive Programming'] %}
+    <p class="cv-distinction">
+      <strong>{{ entry.label | escape }}</strong><span aria-hidden="true"> · </span>{{ entry.details | escape }}
+    </p>
+  {% endfor %}
+
+  <nav class="cv-navigation" aria-label="CV sections">
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#skills">Skills</a>
+  </nav>
+
+  <section class="cv-section" id="education" aria-labelledby="cv-education-heading">
+    <h2 id="cv-education-heading">Education</h2>
+    {% for entry in cv.sections.Education %}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <h3>{{ entry.institution | escape }}</h3>
+          <span class="cv-date cv-entry-date">{% include cv_dates.liquid entry=entry %}</span>
+        </div>
+        {% if entry.area or entry.location %}
+          <p class="cv-meta">
+            {{ entry.area | escape -}}
+            {%- if entry.area and entry.location -%}
+              <span aria-hidden="true"> · </span>
+            {%- endif -%}
+            {{- entry.location | escape }}
+          </p>
+        {% endif %}
+        {% if entry.highlights %}
+          <ul class="cv-highlights">
+            {% for highlight in entry.highlights %}
+              <li>{{ highlight | escape }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cv-section" id="experience" aria-labelledby="cv-experience-heading">
+    <h2 id="cv-experience-heading">Experience</h2>
+    {% for entry in cv.sections.Experience %}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <h3>{{ entry.position | escape }}</h3>
+          <span class="cv-date cv-entry-date">{% include cv_dates.liquid entry=entry %}</span>
+        </div>
+        <p class="cv-meta">{{ entry.company | escape }}</p>
+        {% if entry.highlights %}
+          <ul class="cv-highlights">
+            {% for highlight in entry.highlights %}
+              <li>{{ highlight | escape }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cv-section" id="research" aria-labelledby="cv-research-heading">
+    <h2 id="cv-research-heading">Research</h2>
+    {% for entry in cv.sections.Research %}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <h3>{{ entry.title | escape }}</h3>
+          <span class="cv-date cv-entry-date">{% include cv_dates.liquid entry=entry %}</span>
+        </div>
+        <ul class="cv-highlights">
+          {% for highlight in entry.highlights %}
+            <li>{{ highlight | escape }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cv-section" id="projects" aria-labelledby="cv-projects-heading">
+    <h2 id="cv-projects-heading">Projects</h2>
+    {% for entry in cv.sections.Projects %}
+      {% assign project_page = site.projects | where: 'title', entry.name | first %}
+      <div class="cv-entry">
+        <div class="cv-project-heading">
+          <h3>
+            {% if project_page -%}
+              <a href="{{ project_page.url | relative_url }}">{{ entry.name | escape }}</a>
+            {%- else -%}
+              {{- entry.name | escape -}}
+            {%- endif %}
+          </h3>
+          <a class="cv-source" href="{{ entry.url | escape }}" aria-label="{{ entry.name | escape }} source code"
+            >Source code <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <p class="cv-summary">{{ entry.summary | escape }}</p>
+        {% if entry.highlights %}
+          <ul class="cv-highlights">
+            {% for highlight in entry.highlights %}
+              <li>{{ highlight | escape }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="cv-section" id="awards" aria-labelledby="cv-awards-heading">
+    <h2 id="cv-awards-heading">Awards</h2>
+    <h3 class="cv-award-category">Competitive programming</h3>
+    {% assign ps_awards = cv.sections.Awards | where: 'category', 'competitive-programming' %}
+    {% include cv_awards.liquid awards=ps_awards %}
+    <h3 class="cv-award-category">Research awards</h3>
+    {% assign research_awards = cv.sections.Awards | where: 'category', 'research' %}
+    {% include cv_awards.liquid awards=research_awards %}
+  </section>
+
+  <section class="cv-section" id="skills" aria-labelledby="cv-skills-heading">
+    <h2 id="cv-skills-heading">Skills</h2>
+    <ul class="cv-skill-list" role="list">
+      {% for entry in cv.sections.Skills %}
+        <li>
+          <strong>{{ entry.name | escape }}</strong> <span>({{ entry.level | escape }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</article>

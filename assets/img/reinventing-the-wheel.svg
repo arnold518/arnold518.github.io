@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Reinventing the Wheel</title>
+  <desc id="desc">A conceptual diagram connecting logic gates, memory, and an RV32I processor.</desc>
+  <rect width="1200" height="630" fill="#edf3f3"/>
+  <g fill="none" stroke="#246b68" stroke-width="5">
+    <path d="M325 315h155m240 0h155"/>
+    <rect x="85" y="205" width="240" height="220" rx="14"/>
+    <rect x="480" y="205" width="240" height="220" rx="14"/>
+    <rect x="875" y="205" width="240" height="220" rx="14"/>
+    <path d="M130 275h50v80h-50m50-80c90 0 90 80 0 80m70-40h30"/>
+    <path d="M525 260h150v110H525zm50 0v110m50-110v110m-100-55h150"/>
+    <rect x="930" y="260" width="130" height="110" rx="5"/>
+    <path d="M950 240v20m30-20v20m30-20v20m30-20v20m-90 110v20m30-20v20m30-20v20m30-20v20"/>
+  </g>
+  <g fill="#164743" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="600" y="112" font-size="34" font-weight="600">Reinventing the Wheel</text>
+    <text x="205" y="485" font-size="28">Logic gates</text>
+    <text x="600" y="485" font-size="28">Memory</text>
+    <text x="995" y="485" font-size="28">RV32I</text>
+    <text x="995" y="325" font-size="23">CPU</text>
+  </g>
+</svg>

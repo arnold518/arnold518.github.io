@@ -1,0 +1,32 @@
+_site
+.bundle
+.DS_store
+.idea
+.jekyll-cache
+.jekyll-metadata
+.ruby-version
+.sass-cache
+.tweet-cache
+.venv
+assets/libs/
+assets/rendercv/rendercv_output/*.typ
+al-folio-upgrade-report.md
+node_modules/
+output/playwright/
+test-results/
+vendor
+
+# Python bytecode from bin/ helper scripts
+__pycache__/
+*.pyc
+
+# Local LaTeX build output; the public PDF lives in assets/pdf/cv.pdf.
+cv/build/
+cv/source/*.aux
+cv/source/*.fdb_latexmk
+cv/source/*.fls
+cv/source/*.log
+cv/source/*.out
+cv/source/*.synctex.gz
+cv/source/*.xdv
+cv/source/resume.pdf

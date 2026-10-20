@@ -1,0 +1,174 @@
+cv:
+  name: Jaemin Park
+  email: arnoldpark03@gmail.com
+  website: https://arnold518.github.io/
+  sections:
+    Education:
+      - institution: Seoul National University
+        area: Computer Science and Engineering
+        location: Seoul, Korea
+        start_date: "2022"
+        end_date: present
+        highlights:
+          - "GPA: 3.47 / 4.3; major GPA: 3.77 / 4.3."
+          - "Coursework: object-oriented and functional programming, automata theory, data structures, algorithms, computer architecture, modern algebra,
+            and mathematical analysis."
+      - institution: Gyeonggi Science High School
+        location: Suwon, Korea
+        start_date: "2019"
+        end_date: "2021"
+        highlights:
+          - "GPA: 4.03 / 4.3."
+    Experience:
+      - company: Huawei Technologies, Hong Kong Research Center
+        position: Research Intern
+        start_date: "2025"
+        end_date: "2025"
+      - company: Korean IOI Training Camp
+        position: Teaching Assistant
+        start_date: "2021"
+        end_date: "2024"
+        highlights:
+          - Assisted in teaching algorithms to more than 50 candidates for the Korean IOI delegation.
+    Research:
+      - title: Data Structure for Maintaining Kth Maximum / Minimum Element of Polynomial Functions
+        date: "2021"
+        highlights:
+          - Developed algorithms for maintaining order statistics of linear functions using geometric transformations, Modified Quad Tree,
+            and Persistent Angular Sorting.
+          - Generalized Persistent Angular Sorting to polynomial functions and implemented bucket-based variants.
+      - title: Competitive Reinforcement Learning for Graph Coloring Games
+        date: "2020"
+        highlights:
+          - Devised a two-player graph game to identify vertices important to graph connectivity.
+          - Applied reinforcement learning with DQN, DDQN, and D3QN, and evaluated strategies on large graphs.
+      - title: New Algorithm for Maintaining Lower/Upper Envelope of Similar Convex Figures
+        date: "2020"
+        highlights:
+          - Extended Li Chao trees to maintain envelopes of quadratic functions.
+          - Proved applicability to similar convex figures and implemented bucket-based and divide-and-conquer variants.
+      - title: New Techniques for Dynamic Programming Optimization using Convex Hull and Segment Tree
+        date: "2019"
+        highlights:
+          - Implemented dynamic convex hulls using splay trees for dynamic programming optimization.
+          - Developed Quad Li Chao trees and segment trees containing convex hulls.
+    Projects:
+      - name: Reinventing the Wheel
+        url: https://github.com/arnold518/reinventing-the-wheel
+        summary: CircuitSim, a digital logic simulator that builds from gates and arithmetic circuits through memory systems to single-cycle and
+          pipelined RV32I processors.
+        highlights:
+          - Interactive circuit examples and component documentation.
+          - Timing models and experiments comparing processor implementations.
+      - name: PS Checklist
+        url: https://github.com/arnold518/ps-checklist
+        summary: A beta application for organizing programming contests, tracking problem progress, and recording practice sessions.
+        highlights:
+          - ICPC and Olympiad catalogs, with Codeforces and AtCoder contest imports.
+          - Shared problem status, dated practice records, and a workflow for curating contest resources.
+    Awards:
+      - title: 48th ICPC World Finals
+        date: "2024"
+        summary: 9th place, bronze medal · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Pacific Championship
+        date: "2024"
+        summary: 1st place, champion · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2024"
+        summary: 10th place · Team aespa
+        category: competitive-programming
+        selected: false
+      - title: ICPC Asia Hue City Regional
+        date: "2023"
+        summary: 1st place, champion · Team NewTrend
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2023"
+        summary: 3rd place · Team NewTrend
+        category: competitive-programming
+        selected: false
+      - title: Samsung Collegiate Programming Cup
+        date: "2023"
+        summary: 2nd prize
+        category: competitive-programming
+        selected: true
+      - title: ICPC Asia Seoul Regional
+        date: "2022"
+        summary: 4th place · Team NewTrend
+        category: competitive-programming
+        selected: false
+      - title: Samsung Collegiate Programming Cup
+        date: "2022"
+        summary: 4th prize
+        category: competitive-programming
+        selected: false
+      - title: Korean Selection Test for the International Olympiad in Informatics
+        date: "2021"
+        summary: 6th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2021"
+        summary: Silver prize, 6th place
+        category: competitive-programming
+        selected: false
+      - title: Nexon Youth Programming Challenge
+        date: "2021"
+        summary: Bronze prize, 4th place
+        category: competitive-programming
+        selected: false
+      - title: Google Code Jam, Round 3
+        date: "2021"
+        summary: 196th place
+        category: competitive-programming
+        selected: false
+      - title: Reply Code Challenge, Teen Edition
+        date: "2021"
+        summary: 4th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2020"
+        summary: Silver prize, 5th place
+        category: competitive-programming
+        selected: false
+      - title: Nexon Youth Programming Challenge
+        date: "2020"
+        summary: Bronze prize, 8th place
+        category: competitive-programming
+        selected: false
+      - title: Google Kick Start, Round B
+        date: "2020"
+        summary: 28th place
+        category: competitive-programming
+        selected: false
+      - title: Korean Olympiad in Informatics
+        date: "2019"
+        summary: Silver prize
+        category: competitive-programming
+        selected: false
+      - title: Samsung Humantech Paper Award, Mathematics / Data Processing
+        date: "2021"
+        summary: Gold prize
+        category: research
+      - title: Samsung Humantech Paper Award, Mathematics / Data Processing
+        date: "2020"
+        summary: Bronze prize
+        category: research
+    Skills:
+      - name: C/C++
+        level: Fluent
+      - name: Java
+        level: Intermediate
+      - name: Python
+        level: Intermediate
+      - name: Scala
+        level: Basic
+    Competitive Programming:
+      - label: Codeforces
+        details: International Grandmaster; rating 2715.

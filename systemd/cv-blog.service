@@ -1,0 +1,20 @@
+[Unit]
+Description=Jaemin Park CV blog preview on port 1111
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/arnold/github/arnold518.github.io
+RuntimeDirectory=cv-blog
+Environment=CV_BLOG_PORT=1111
+Environment=CV_BLOG_BASEURL=/absproxy/1111
+Environment=CV_BLOG_RUNTIME_DIR=%t/cv-blog
+Environment=CV_BLOG_CACHE_DIR=%h/.cache/cv-blog
+ExecStart=%h/arnold/github/arnold518.github.io/systemd/serve.sh
+ExecStop=-/usr/bin/docker stop --time 10 cv-blog-preview-%U
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

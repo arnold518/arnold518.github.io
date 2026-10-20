@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Mathematics</title>
+  <desc id="desc">A curve on coordinate axes and a matrix represent mathematical ideas.</desc>
+  <rect width="1200" height="630" fill="#f1eef7"/>
+  <g fill="none" stroke="#75609b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M175 430h420M245 460V180m-12 18 12-18 12 18m320 220 18 12-18 12"/>
+    <path d="M260 405c70 0 80-140 150-140s100 140 165-65" stroke-width="7"/>
+    <path d="M755 205h-30v230h30m250-230h30v230h-30"/>
+  </g>
+  <g fill="#554270" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="600" y="100" font-size="34" font-weight="600">Mathematics</text>
+    <g font-size="46">
+      <text x="805" y="290">a</text><text x="950" y="290">b</text>
+      <text x="805" y="395">c</text><text x="950" y="395">d</text>
+    </g>
+    <text x="600" y="560" font-size="26">Definitions · Proofs · Worked examples</text>
+  </g>
+</svg>

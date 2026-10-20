@@ -1,0 +1,8 @@
+<div class="projects">
+  <div class="row row-cols-1 row-cols-md-2">
+    {% for blog in site.data.blogs %}
+      {% assign project = blog %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+</div>
