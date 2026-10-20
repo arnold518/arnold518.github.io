@@ -28,6 +28,8 @@ The original archive also contains optional sections and commented examples from
 
 The website's CV and award data live in `../_data/cv.yml`. The biography and selected achievements appear on `../_pages/about.md`; the dedicated awards page uses the shared CV data. Project descriptions live in `../_projects/`.
 
+The web CV uses the site-owned `../_includes/cv_profile.liquid` with styles scoped to `.cv-document` in `../assets/css/cv.css`. It reads the shared data directly, with research represented by `title`, `date`, and `highlights`. The date and award helpers control presentation; keep personal claims out of the templates. Changes to the website's layout or data structure alone do not change the TeX content or require a local PDF rebuild.
+
 For example, an award update changes both `_data/cv.yml` and `source/cv/achievements.tex`. A research update changes the website CV and `source/cv/projects.tex`. Website project pages can provide more detail than the printed CV; shared names, dates, results, and claims must agree.
 
 Keep the TeX and website independently editable. Synchronization is performed by the agent as part of the requested edit, rather than by a YAML-to-TeX generator.

@@ -33,6 +33,16 @@ The first compilation exposed an invalid table-cell line break in education and 
 
 The updated production Jekyll build completed successfully. The running port 1111 preview serves the three blog cards, the supplied portrait, and the new PDF. A PDF downloaded from that preview matches the compiled and published asset byte for byte, contains rating 2715 and the skills section, and has one page.
 
+## Web CV redesign
+
+The initial web CV delegated its presentation to the generic al-folio CV renderer. Review at desktop width 1440 and mobile width 390 found oversized cards, tightly packed research text, excessive award spacing, unfinished skills formatting, a duplicated internship year, and an unlabeled PDF icon.
+
+The replacement uses the existing default layout with a site-owned `cv_profile.liquid` include and scoped `assets/css/cv.css`. It presents the name, contact links, Codeforces information, and labeled PDF download at the top. In-page links lead to Education, Experience, Research, Projects, Awards, and Skills. Entry dates align on desktop and sit immediately above entry titles on mobile. Awards retain all 17 programming results and two research awards, grouped by category and year. Skills use a compact inline list, and project titles link to their detail pages alongside separate source links.
+
+Research data were restructured into titles, dates, and bullet highlights in `_data/cv.yml`, preserving the existing claims. Personal facts remain in this shared data file. The TeX content and compiled PDF did not require changes for this presentation update. The new templates and CSS do not override any gem-owned files.
+
+The production Jekyll build completed successfully. Browser review covered widths 1440, 768, and 390, plus desktop dark mode, and found no horizontal overflow or page script errors. All 19 awards and six content sections were rendered. Page heights decreased from 3973 to 2714 pixels on desktop and from 5424 to 4227 pixels on mobile. The mobile section navigation has two rows of three links, with 44-pixel tap targets. Its Research link reaches the intended section below the fixed header, and the labeled PDF link downloads `Jaemin-Park-CV.pdf`, matching the published PDF asset byte for byte. These are local rendering observations; GitHub Actions and live publication were not run.
+
 ## Template changes
 
 The personal branch removes sample posts, projects, people, books, papers, CV data, stock images, and sample external feeds. The raw template branch retains all upstream files. The personal branch also removes starter maintenance workflows and bundled agent discovery directories, while retaining the upstream license and technical documentation.

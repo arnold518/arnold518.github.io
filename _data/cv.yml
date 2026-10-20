@@ -31,18 +31,27 @@ cv:
         highlights:
           - Assisted in teaching algorithms to more than 50 candidates for the Korean IOI delegation.
     Research:
-      - label: 2021 · Data Structure for Maintaining Kth Maximum / Minimum Element of Polynomial Functions
-        details: Developed algorithms for maintaining order statistics of linear functions using geometric transformations, Modified Quad Tree,
-          and Persistent Angular Sorting. Generalized Persistent Angular Sorting to polynomial functions and implemented bucket-based variants.
-      - label: 2020 · Competitive Reinforcement Learning for Graph Coloring Games
-        details: Devised a two-player graph game to identify vertices important to graph connectivity. Applied reinforcement learning with DQN,
-          DDQN, and D3QN, and evaluated strategies on large graphs.
-      - label: 2020 · New Algorithm for Maintaining Lower/Upper Envelope of Similar Convex Figures
-        details: Extended Li Chao trees to maintain envelopes of quadratic functions. Proved applicability to similar convex figures and implemented
-          bucket-based and divide-and-conquer variants.
-      - label: 2019 · New Techniques for Dynamic Programming Optimization using Convex Hull and Segment Tree
-        details: Implemented dynamic convex hulls using splay trees for dynamic programming optimization. Developed Quad Li Chao trees and segment
-          trees containing convex hulls.
+      - title: Data Structure for Maintaining Kth Maximum / Minimum Element of Polynomial Functions
+        date: "2021"
+        highlights:
+          - Developed algorithms for maintaining order statistics of linear functions using geometric transformations, Modified Quad Tree,
+            and Persistent Angular Sorting.
+          - Generalized Persistent Angular Sorting to polynomial functions and implemented bucket-based variants.
+      - title: Competitive Reinforcement Learning for Graph Coloring Games
+        date: "2020"
+        highlights:
+          - Devised a two-player graph game to identify vertices important to graph connectivity.
+          - Applied reinforcement learning with DQN, DDQN, and D3QN, and evaluated strategies on large graphs.
+      - title: New Algorithm for Maintaining Lower/Upper Envelope of Similar Convex Figures
+        date: "2020"
+        highlights:
+          - Extended Li Chao trees to maintain envelopes of quadratic functions.
+          - Proved applicability to similar convex figures and implemented bucket-based and divide-and-conquer variants.
+      - title: New Techniques for Dynamic Programming Optimization using Convex Hull and Segment Tree
+        date: "2019"
+        highlights:
+          - Implemented dynamic convex hulls using splay trees for dynamic programming optimization.
+          - Developed Quad Li Chao trees and segment trees containing convex hulls.
     Projects:
       - name: Reinventing the Wheel
         url: https://github.com/arnold518/reinventing-the-wheel

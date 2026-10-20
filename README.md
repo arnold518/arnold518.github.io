@@ -13,6 +13,7 @@ Personal CV and project website at https://arnold518.github.io/, built with [al-
 - `_pages/about.md`: homepage and biography.
 - `assets/img/profile.jpg`: homepage portrait supplied by Jaemin Park.
 - `_data/cv.yml`: education, experience, research, projects, skills, and awards. Awards are also used by the homepage and awards page; `selected: true` selects homepage highlights.
+- `_pages/cv.md`: the web CV, rendered by `_includes/cv_profile.liquid` with scoped styles in `assets/css/cv.css`. Its date helper formats single-year entries, and its award helper groups the complete history by category and year. Research data use separate titles, dates, and highlights.
 - `_projects/`: Reinventing the Wheel and PS Checklist.
 - `_data/blogs.yml`: the three blogs, shared by the homepage and Blogs page through `_includes/blog_cards.liquid`, which reuses the Projects cards.
 - `cv/source/`: the editable TeX CV project, including `resume.tex`, section files, fonts, and `russell.cls`.

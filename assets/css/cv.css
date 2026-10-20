@@ -1,0 +1,279 @@
+.cv-document {
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.cv-document a:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+}
+
+.cv-document .cv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cv-document .cv-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cv-document h1 {
+  margin: 0 0 0.65rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.cv-document .cv-contact,
+.cv-document .cv-award-years,
+.cv-document .cv-award-list,
+.cv-document .cv-skill-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-document .cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.9rem;
+}
+
+.cv-document .cv-contact a {
+  color: inherit;
+}
+
+.cv-document .cv-download {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.3rem;
+  padding: 0.65rem 1rem;
+  color: var(--global-text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cv-document .cv-download:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+.cv-document .cv-distinction {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+}
+
+.cv-document .cv-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.35rem;
+  margin: 1.4rem 0 2rem;
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 0.4rem 0;
+}
+
+.cv-document .cv-navigation a {
+  padding: 0.3rem 0;
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+.cv-document .cv-section {
+  margin-top: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.cv-document h2 {
+  margin: 0 0 1rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: 0.45rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cv-document h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.cv-document .cv-entry + .cv-entry {
+  margin-top: 1.25rem;
+}
+
+.cv-document .cv-entry-header,
+.cv-document .cv-project-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.cv-document .cv-entry-header h3,
+.cv-document .cv-project-heading h3 {
+  min-width: 0;
+}
+
+.cv-document .cv-date,
+.cv-document .cv-meta,
+.cv-document .cv-source,
+.cv-document .cv-award-result,
+.cv-document .cv-skill-list span {
+  color: var(--global-text-color);
+  color: color-mix(in srgb, var(--global-text-color) 75%, var(--global-bg-color));
+}
+
+.cv-document .cv-date {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.cv-document .cv-meta,
+.cv-document .cv-summary {
+  margin: 0.2rem 0 0;
+  font-size: 0.925rem;
+}
+
+.cv-document .cv-highlights {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.925rem;
+  list-style: disc;
+}
+
+.cv-document .cv-highlights li {
+  padding-left: 0.15rem;
+}
+
+.cv-document .cv-highlights li + li {
+  margin-top: 0.2rem;
+}
+
+.cv-document .cv-source {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.cv-document .cv-award-category {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cv-document .cv-award-years + .cv-award-category {
+  margin-top: 1.5rem;
+}
+
+.cv-document .cv-award-year {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.45rem 0;
+}
+
+.cv-document .cv-award-year + .cv-award-year {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.cv-document .cv-award {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 0.1rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.cv-document .cv-award + .cv-award {
+  margin-top: 0.5rem;
+}
+
+.cv-document .cv-award-selected .cv-award-title,
+.cv-document .cv-award-selected .cv-award-result {
+  color: var(--global-text-color);
+  font-weight: 600;
+}
+
+.cv-document .cv-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+  font-size: 0.925rem;
+}
+
+.cv-document .cv-skill-list li {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cv-document .cv-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cv-document h1 {
+    font-size: 2rem;
+  }
+
+  .cv-document .cv-contact {
+    gap: 0.3rem 0.85rem;
+  }
+
+  .cv-document .cv-navigation {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.1rem 0.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .cv-document .cv-navigation a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .cv-document .cv-entry-header {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .cv-document .cv-entry-date {
+    order: -1;
+  }
+
+  .cv-document .cv-project-heading {
+    flex-wrap: wrap;
+    gap: 0.2rem 1rem;
+  }
+
+  .cv-document .cv-award-year {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .cv-document .cv-award {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cv-document .cv-award-title {
+    font-weight: 500;
+  }
+}
