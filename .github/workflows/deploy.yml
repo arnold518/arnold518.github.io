@@ -68,7 +68,9 @@ jobs:
       - name: Build site
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --trace
+        run: |
+          bundle exec jekyll build --trace
+          touch _site/.nojekyll
       - name: Publish main to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

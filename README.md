@@ -74,6 +74,8 @@ The workflow runs on every branch push except `gh-pages` and the untouched `temp
 
 Actions publishes generated output without committing the rebuilt PDF back to the source branch. For the local live preview, rebuild and copy the PDF locally after TeX changes.
 
+The generated branch includes `.nojekyll` so Pages serves the compiled files directly. Keep the Pages source set to `gh-pages` at `/(root)`. Selecting `main` invokes GitHub's built-in Jekyll builder, which cannot load the `al_folio_core` theme; its separate **pages build and deployment** run fails even when **Build and deploy site** succeeds. Correct the source setting rather than rerunning that failed source build.
+
 1. Push the template and personal branches:
 
    ```bash
