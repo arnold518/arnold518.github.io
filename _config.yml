@@ -243,6 +243,7 @@ exclude:
   - test/
   - scripts/
   - output/
+  - systemd/
 keep_files:
   - CNAME
   - .nojekyll
