@@ -2,7 +2,7 @@ name: Build and deploy site
 
 on:
   push:
-    branches: [main, site/jaemin-park]
+    branches-ignore: [gh-pages, template/al-folio]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -15,7 +15,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  cv:
+    name: Compile TeX CV
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+      - name: Cache Tectonic and TeX packages
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.cache/cv-blog/tectonic
+            ~/.cache/tectonic
+          key: ${{ runner.os }}-cv-tectonic-0.17.0-${{ hashFiles('cv/source/**/*.tex', 'cv/source/**/*.cls') }}
+          restore-keys: |
+            ${{ runner.os }}-cv-tectonic-0.17.0-
+      - name: Compile current TeX source
+        run: ./cv/build.sh
+      - name: Prepare public PDF
+        run: install -m 0644 cv/build/resume.pdf assets/pdf/cv.pdf
+      - name: Upload compiled PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: jaemin-park-cv
+          path: assets/pdf/cv.pdf
+          if-no-files-found: error
+          retention-days: 30
   build:
+    needs: cv
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -30,6 +60,11 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: "20"
+      - name: Download freshly compiled CV
+        uses: actions/download-artifact@v8
+        with:
+          name: jaemin-park-cv
+          path: assets/pdf
       - name: Build site
         env:
           JEKYLL_ENV: production

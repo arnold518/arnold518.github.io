@@ -15,11 +15,23 @@ The homepage introduces Jaemin Park and links to the PDF CV, full CV, awards, pr
 
 The CV includes education, the Huawei research internship, Korean IOI Training Camp teaching, four research projects, programming skills, and the two software projects. The supplied PDF is preserved byte for byte at `cv/archive/CV_20240314.pdf`; its public copy is `assets/pdf/cv.pdf`. The subsequently imported editable TeX project is maintained in `cv/source/` under the workflow in `AGENTS.md`.
 
-The user designated the new TeX assets as the current reference and requested a website-only alignment for this import. The website now includes Codeforces rating 2715 and the International Grandmaster title from the active TeX achievements section. The Awards page renders the same shared entry as the CV. The TeX source remains unchanged; the public PDF is still the legacy copy and has not been rebuilt. Future CV requests update the website and TeX together unless explicitly limited by the user.
+The user designated the new TeX assets as the current reference and requested a website-only alignment for the initial import. The website includes Codeforces rating 2715 and the International Grandmaster title from the active TeX achievements section. The Awards page renders the same shared entry as the CV. The initial import left the TeX source and legacy public PDF unchanged; the later PDF request is recorded below. Future CV requests update the website and TeX together unless explicitly limited by the user.
 
 Reinventing the Wheel and PS Checklist each have a project page and an illustrative SVG for the project listing. Their descriptions use the current local project documentation. PS Checklist is described as a beta with a JavaScript frontend, Python services, and Supabase. Its authenticated preview address is omitted from the public site.
 
-Problem Solving Notes, Mathematics Notes, and Computer Science Notes are linked from both the homepage and the Notes page through shared `_data/notes.yml` entries. The existing destinations retain their paths.
+The **Blogs** section at `/blogs/` and on the homepage presents Problem Solving, Mathematics, and Computer Science in cards matching the Projects page. `_data/blogs.yml` provides descriptions, external destinations, repository links, and original SVG thumbnails. The new `_includes/blog_cards.liquid` reuses the existing gem-owned project card, with the same responsive grid and hover behavior. `/notes/` remains an alias without a navigation entry, and the three existing blog destinations retain their paths.
+
+The user's portrait was moved from the supplied root-level JPEG to `assets/img/profile.jpg` and enabled in the homepage's profile front matter.
+
+## Compiled PDF and per-push builds
+
+`assets/pdf/cv.pdf` is now compiled from the current working TeX source with Tectonic 0.17.0. The homepage download uses this file and a descriptive download filename; the CV page and social PDF link use the same stable path. The archived old PDF and ZIP remain unchanged.
+
+The first compilation exposed an invalid table-cell line break in education and a stray line break after the achievements table. These were corrected without changing personal facts. Table widths and section spacing were adjusted so the full CV, including skills, fits on one page. The resulting PDF was rendered and reviewed before replacing the public download.
+
+`cv/build.sh` is the shared build entry point. It pins and checksum-verifies the compiler binary and caches the required TeX packages. The GitHub workflow compiles on every branch push except `gh-pages` and `template/al-folio`, on pull requests to `main`, and on manual runs. Its CV job uploads the `jaemin-park-cv` artifact; the dependent Jekyll job downloads that artifact before rendering the site. Successful `main` builds publish the new PDF with the site, without committing generated output back to the source branch. The Actions workflow has not been run remotely in this task.
+
+The updated production Jekyll build completed successfully. The running port 1111 preview serves the three blog cards, the supplied portrait, and the new PDF. A PDF downloaded from that preview matches the compiled and published asset byte for byte, contains rating 2715 and the skills section, and has one page.
 
 ## Template changes
 

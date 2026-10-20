@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Computer Science</title>
+  <desc id="desc">Three connected layers of a neural network represent ideas explored in research papers.</desc>
+  <rect width="1200" height="630" fill="#eef2f8"/>
+  <g fill="none" stroke="#647fa3" stroke-width="4" opacity="0.65">
+    <path d="m320 240 280-70-280 140 280-20-280 100 280-80-280-70 280 170-280-100 280-140-280 220 280-100"/>
+    <path d="m600 170 280 70-280 50 280 20-280 100 280-20-280-220 280 140-280-20 280 100-280 20 280-170"/>
+  </g>
+  <g fill="#eef2f8" stroke="#46688f" stroke-width="5">
+    <circle cx="320" cy="240" r="24"/><circle cx="320" cy="310" r="24"/><circle cx="320" cy="390" r="24"/>
+    <circle cx="600" cy="170" r="24"/><circle cx="600" cy="290" r="24"/><circle cx="600" cy="410" r="24"/>
+    <circle cx="880" cy="240" r="24"/><circle cx="880" cy="310" r="24"/><circle cx="880" cy="390" r="24"/>
+  </g>
+  <g fill="#314f74" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="600" y="100" font-size="34" font-weight="600">Computer Science</text>
+    <text x="600" y="560" font-size="26">Paper reviews · Machine learning · Computation</text>
+  </g>
+</svg>

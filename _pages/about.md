@@ -3,7 +3,10 @@ layout: about
 title: About
 permalink: /
 subtitle: Computer Science and Engineering · Seoul National University
-profile: false
+profile:
+  align: right
+  image: profile.jpg
+  image_circular: false
 selected_papers: false
 social: false
 announcements:
@@ -16,7 +19,7 @@ I study computer science and engineering at Seoul National University. My intere
 
 I competed with **NewTrend**, winning a **bronze medal at the 48th ICPC World Finals** and the **2024 ICPC Asia Pacific Championship**. I also build software and write notes to explore how things work, from digital logic and processors to algorithms and mathematics.
 
-[CV]({{ '/cv/' | relative_url }}) · [Download PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}) · [GitHub](https://github.com/arnold518) · [Email](mailto:arnoldpark03@gmail.com)
+[CV]({{ '/cv/' | relative_url }}) · <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" download="Jaemin-Park-CV.pdf">Download PDF</a> · [GitHub](https://github.com/arnold518) · [Email](mailto:arnoldpark03@gmail.com)
 
 ## Selected achievements
 
@@ -37,13 +40,11 @@ I competed with **NewTrend**, winning a **bronze medal at the 48th ICPC World Fi
 
 {% endfor %}
 
-## Notes
+## Blogs
 
-I keep three collections of study notes and articles:
+I write about problem solving, mathematics, and computer science, from contest solutions and proofs to papers I am reading.
 
-{% for note in site.data.notes %}
-- **[{{ note.title }}]({{ note.url }})** — {{ note.description }}
-{% endfor %}
+{% include blog_cards.liquid %}
 
 ## Experience and research
 

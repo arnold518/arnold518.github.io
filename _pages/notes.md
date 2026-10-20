@@ -1,21 +1,13 @@
 ---
 layout: page
-title: Notes
+title: Blogs
 permalink: /notes/
-description: Study notes, problem solutions, and paper reviews.
-nav: true
-nav_order: 4
+description: Writing about problem solving, mathematics, and computer science.
+nav: false
+canonical_url: https://arnold518.github.io/blogs/
+sitemap: false
 ---
 
-These collections bring together my solutions, explanations, and study notes.
+I write to understand ideas and make them easier to revisit. These three blogs collect contest solutions, mathematical explanations, and paper reviews.
 
-{% for note in site.data.notes %}
-## [{{ note.title }}]({{ note.url }})
-
-{{ note.description }}
-
-{{ note.details }}
-
-[Read notes →]({{ note.url }}) · [Source on GitHub]({{ note.source }})
-
-{% endfor %}
+{% include blog_cards.liquid %}

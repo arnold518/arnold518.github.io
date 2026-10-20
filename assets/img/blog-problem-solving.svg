@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Problem Solving</title>
+  <desc id="desc">A branching graph connects a problem to several possible solutions.</desc>
+  <rect width="1200" height="630" fill="#edf3f3"/>
+  <g fill="none" stroke="#246b68" stroke-width="5" stroke-linecap="round">
+    <path d="M300 315h180m0 0 170-130m-170 130 170 130m0-260h220m-220 260h220"/>
+    <circle cx="270" cy="315" r="30" fill="#edf3f3"/>
+    <circle cx="480" cy="315" r="30" fill="#edf3f3"/>
+    <circle cx="670" cy="185" r="30" fill="#edf3f3"/>
+    <circle cx="670" cy="445" r="30" fill="#edf3f3"/>
+    <circle cx="900" cy="185" r="30" fill="#246b68"/>
+    <circle cx="900" cy="445" r="30" fill="#edf3f3"/>
+    <path d="m887 185 9 10 17-21" stroke="#edf3f3"/>
+  </g>
+  <g fill="#164743" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="600" y="100" font-size="34" font-weight="600">Problem Solving</text>
+    <text x="600" y="560" font-size="26">Algorithms · Data structures · Contest solutions</text>
+  </g>
+</svg>

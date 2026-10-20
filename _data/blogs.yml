@@ -1,0 +1,15 @@
+- title: Problem Solving
+  redirect: https://arnold518.github.io/ps-notes/
+  github: https://github.com/arnold518/ps-notes
+  img: assets/img/blog-problem-solving.svg
+  description: Contest solutions and the ideas behind them, from algorithms and data structures to techniques for competitive programming.
+- title: Mathematics
+  redirect: https://arnold518.github.io/math-notes/
+  github: https://github.com/arnold518/math-notes
+  img: assets/img/blog-mathematics.svg
+  description: Definitions, proofs, and worked examples in linear algebra, abstract algebra, mathematical statistics, and topology.
+- title: Computer Science
+  redirect: https://arnold518.github.io/cs-notes/
+  github: https://github.com/arnold518/cs-notes
+  img: assets/img/blog-computer-science.svg
+  description: Paper reviews and explanations of machine learning, reinforcement learning, and quantum computation, with the mathematics behind them.

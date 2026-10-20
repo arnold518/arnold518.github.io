@@ -11,19 +11,20 @@ Personal CV and project website at https://arnold518.github.io/, built with [al-
 ## Content
 
 - `_pages/about.md`: homepage and biography.
+- `assets/img/profile.jpg`: homepage portrait supplied by Jaemin Park.
 - `_data/cv.yml`: education, experience, research, projects, skills, and awards. Awards are also used by the homepage and awards page; `selected: true` selects homepage highlights.
 - `_projects/`: Reinventing the Wheel and PS Checklist.
-- `_data/notes.yml`: the three notes collections, shared by the homepage and Notes page.
+- `_data/blogs.yml`: the three blogs, shared by the homepage and Blogs page through `_includes/blog_cards.liquid`, which reuses the Projects cards.
 - `cv/source/`: the editable TeX CV project, including `resume.tex`, section files, fonts, and `russell.cls`.
 - `cv/archive/`: the original supplied ZIP and PDF, retained as historical snapshots.
-- `assets/pdf/cv.pdf`: the downloadable CV, linked by the CV page and contact navigation; currently the legacy PDF pending a rebuild from TeX.
+- `assets/pdf/cv.pdf`: the CV compiled from the current TeX source, linked by the CV page and homepage download.
 - `_config.yml`: site settings, with an empty `baseurl` for the account homepage.
 
-The existing notes sites are linked at `/ps-notes/`, `/math-notes/`, and `/cs-notes/`.
+The Blogs section is at `/blogs/`, with `/notes/` retained as an alias. Its cards open the existing sites at `/ps-notes/`, `/math-notes/`, and `/cs-notes/`.
 
 For CV changes, the agent updates the website content and TeX source together under [AGENTS.md](AGENTS.md). The formats remain independently editable; there is no generator translating one into the other. See [CV maintenance](cv/README.md) for source layout, PDF build commands, and the import notes.
 
-The supplied TeX assets are the current reference. For this import, the website follows those assets while the TeX and legacy PDF remain unchanged, as requested.
+The supplied TeX assets are the current reference. Rebuild the PDF locally with `./cv/build.sh`, review `cv/build/resume.pdf`, and copy it to `assets/pdf/cv.pdf` as described in the maintenance guide. GitHub Actions compiles and includes a fresh PDF in every site build.
 
 ## Local development
 
@@ -68,7 +69,9 @@ In shells without the user session environment, prefix `systemctl` and `journalc
 
 ## GitHub Pages
 
-The workflow builds pushes to `main` and `site/jaemin-park`, pull requests to `main`, and manual runs. Only pushes or manual runs on `main` publish the built site to `gh-pages`.
+The workflow runs on every branch push except `gh-pages` and the untouched `template/al-folio`, on pull requests to `main`, and on manual runs. It compiles the TeX CV first and uploads a `jaemin-park-cv` artifact, available from that Actions run for 30 days. The Jekyll job downloads this fresh PDF into `assets/pdf/cv.pdf` before building, so a failed CV compilation blocks publication. Only pushes or manual runs on `main` publish the built site to `gh-pages`; other branches build and retain the PDF artifact for review.
+
+Actions publishes generated output without committing the rebuilt PDF back to the source branch. For the local live preview, rebuild and copy the PDF locally after TeX changes.
 
 1. Push the template and personal branches:
 
