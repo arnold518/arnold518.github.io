@@ -6,21 +6,22 @@ The supplied TeX assets are the current reference for personal CV facts. The old
 
 ## Files
 
-| Path                         | Purpose                                                                      |
-| ---------------------------- | ---------------------------------------------------------------------------- |
-| `source/resume.tex`          | Main TeX document, header, layout settings, and section inclusion order      |
-| `source/russell.cls`         | CV document class and formatting                                             |
-| `source/cv/education.tex`    | Education and coursework                                                     |
-| `source/cv/achievements.tex` | Competitive programming results, research awards, and Codeforces information |
-| `source/cv/projects.tex`     | Research projects; this original filename refers to the research section     |
-| `source/cv/experience.tex`   | Internships and teaching experience                                          |
-| `source/cv/skills.tex`       | Programming skills                                                           |
-| `source/cv/fonts/`           | Fonts included in the supplied source archive                                |
-| `archive/CV_20240314.zip`    | Unmodified original source archive                                           |
-| `archive/CV_20240314.pdf`    | Unmodified original PDF                                                      |
-| `../assets/pdf/cv.pdf`       | Public downloadable PDF compiled from the current working TeX source         |
-| `build.sh`                   | Shared local and GitHub Actions compilation script                           |
-| `build/`                     | Ignored temporary LaTeX output                                               |
+| Path                              | Purpose                                                                                         |
+| --------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `source/resume.tex`               | Main TeX document, header, layout settings, and section inclusion order                         |
+| `source/russell.cls`              | CV document class and formatting                                                                |
+| `source/cv/education.tex`         | Education and coursework                                                                        |
+| `source/cv/achievements.tex`      | Competitive programming results, research awards, and Codeforces information                    |
+| `source/cv/projects.tex`          | Research projects; this original filename refers to the research section                        |
+| `source/cv/software-projects.tex` | Reinventing the Wheel and PS Checklist, matching the website's project summaries and highlights |
+| `source/cv/experience.tex`        | Internships and teaching experience                                                             |
+| `source/cv/skills.tex`            | Programming skills                                                                              |
+| `source/cv/fonts/`                | Fonts included in the supplied source archive                                                   |
+| `archive/CV_20240314.zip`         | Unmodified original source archive                                                              |
+| `archive/CV_20240314.pdf`         | Unmodified original PDF                                                                         |
+| `../assets/pdf/cv.pdf`            | Public downloadable PDF compiled from the current working TeX source                            |
+| `build.sh`                        | Shared local and GitHub Actions compilation script                                              |
+| `build/`                          | Ignored temporary LaTeX output                                                                  |
 
 The original archive also contains optional sections and commented examples from the template. Only the active inputs in `source/resume.tex` are part of the CV. Those examples do not establish personal facts.
 
@@ -31,6 +32,8 @@ The website's CV and award data live in `../_data/cv.yml`. The biography and sel
 The web CV uses the site-owned `../_includes/cv_profile.liquid` with styles scoped to `.cv-document` in `../assets/css/cv.css`. It reads the shared data directly, with research represented by `title`, `date`, and `highlights`. The date and award helpers control presentation; keep personal claims out of the templates. Changes to the website's layout or data structure alone do not change the TeX content or require a local PDF rebuild.
 
 For example, an award update changes both `_data/cv.yml` and `source/cv/achievements.tex`. A research update changes the website CV and `source/cv/projects.tex`. Website project pages can provide more detail than the printed CV; shared names, dates, results, and claims must agree.
+
+Software project updates pair `cv.sections.Projects` in `_data/cv.yml` with `source/cv/software-projects.tex`, and update the related `_projects/` page when affected. The initial project descriptions copy the website CV's summaries and highlights as a draft for later editing. Project titles link to their website detail pages, and source links open their repositories. No project dates are inferred.
 
 Keep the TeX and website independently editable. Synchronization is performed by the agent as part of the requested edit, rather than by a YAML-to-TeX generator.
 
@@ -85,3 +88,9 @@ The working source was extracted from the supplied ZIP. Both archived original f
 The subsequent request added a current compiled public PDF and compilation on every push. The legacy download was replaced by a one-page build from `source/resume.tex`; the archived old PDF remains historical. The working source fixes an invalid table-cell line break in education and an extra line break after achievements. Table widths and section spacing were adjusted to fit the content on one page. Personal facts were preserved.
 
 The website now uses the source's Codeforces rating **2715** and International Grandmaster title. The undated rating is not labeled current or peak. The old PDF's different rating is superseded by the supplied TeX reference; it does not require further reconciliation for this import.
+
+## Project descriptions added on 2026 10 21
+
+The current PDF includes a Projects section with Reinventing the Wheel and PS Checklist. Its draft explanations match the existing website CV's project summaries and highlights, including PS Checklist's beta status. Edit these in `source/cv/software-projects.tex` alongside the website data when refining them.
+
+The CV now has two pages. `source/resume.tex` starts Projects on the second page, followed by Experience and Skills, keeping the new explanations together. Both pages were rendered and reviewed after a successful `./cv/build.sh` build before replacing the public PDF.
