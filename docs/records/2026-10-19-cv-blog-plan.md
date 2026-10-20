@@ -39,7 +39,9 @@ Working assumptions: English for the profile and CV; original languages retained
 
 ## Content inventory from the supplied CV
 
-Source: [CV_20240314.pdf](../../CV_20240314.pdf). The PDF contains entries through 2025, so its filename does not establish its revision date. The entries below preserve the supplied information; time-sensitive details need review before publication.
+Source: [CV_20240314.pdf](../../cv/archive/CV_20240314.pdf). The PDF contains entries through 2025, so its filename does not establish its revision date. The entries below preserve the supplied information; time-sensitive details need review before publication.
+
+Update on 2026-10-20: the user supplied [editable TeX assets](../../cv/source/resume.tex) and designated them as the current reference. This original PDF inventory remains a historical record; the website now follows the TeX assets. See [CV maintenance](../../cv/README.md).
 
 ### Profile and education
 
@@ -76,7 +78,7 @@ Keep both the result and team name where supplied. Distinguish a numbered prize 
 | 2020 | Google Kick Start, Round B                                          | 28th place              | —        |
 | 2019 | Korean Olympiad in Informatics                                      | Silver prize            | —        |
 
-The CV also lists **Codeforces rating 2610, International Grandmaster**. Confirm the profile URL and whether 2610 is a historical, maximum, or current rating before choosing the public label. Add official standings or award links to individual entries during content preparation.
+The original PDF lists **Codeforces rating 2610, International Grandmaster**. The subsequently supplied TeX assets supersede this number with **2715**, which is now used on the website without a current or peak label. Add official standings or award links to individual entries during content preparation.
 
 ### Research awards
 

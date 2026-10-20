@@ -14,10 +14,16 @@ Personal CV and project website at https://arnold518.github.io/, built with [al-
 - `_data/cv.yml`: education, experience, research, projects, skills, and awards. Awards are also used by the homepage and awards page; `selected: true` selects homepage highlights.
 - `_projects/`: Reinventing the Wheel and PS Checklist.
 - `_data/notes.yml`: the three notes collections, shared by the homepage and Notes page.
-- `CV_20240314.pdf`: the supplied PDF, linked by the CV page and contact navigation.
+- `cv/source/`: the editable TeX CV project, including `resume.tex`, section files, fonts, and `russell.cls`.
+- `cv/archive/`: the original supplied ZIP and PDF, retained as historical snapshots.
+- `assets/pdf/cv.pdf`: the downloadable CV, linked by the CV page and contact navigation; currently the legacy PDF pending a rebuild from TeX.
 - `_config.yml`: site settings, with an empty `baseurl` for the account homepage.
 
 The existing notes sites are linked at `/ps-notes/`, `/math-notes/`, and `/cs-notes/`.
+
+For CV changes, the agent updates the website content and TeX source together under [AGENTS.md](AGENTS.md). The formats remain independently editable; there is no generator translating one into the other. See [CV maintenance](cv/README.md) for source layout, PDF build commands, and the import notes.
+
+The supplied TeX assets are the current reference. For this import, the website follows those assets while the TeX and legacy PDF remain unchanged, as requested.
 
 ## Local development
 

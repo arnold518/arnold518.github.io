@@ -244,6 +244,7 @@ exclude:
   - scripts/
   - output/
   - systemd/
+  - cv/
 keep_files:
   - CNAME
   - .nojekyll

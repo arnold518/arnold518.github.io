@@ -13,7 +13,9 @@ Recorded: 2026-10-20
 
 The homepage introduces Jaemin Park and links to the PDF CV, full CV, awards, projects, and notes. Four selected awards appear on the homepage. All 17 competitive programming results and two research awards are stored in `_data/cv.yml` and shared with the Awards page.
 
-The CV includes education, the Huawei research internship, Korean IOI Training Camp teaching, four research projects, programming skills, and the two software projects. The supplied `CV_20240314.pdf` is preserved byte for byte and is the downloadable CV.
+The CV includes education, the Huawei research internship, Korean IOI Training Camp teaching, four research projects, programming skills, and the two software projects. The supplied PDF is preserved byte for byte at `cv/archive/CV_20240314.pdf`; its public copy is `assets/pdf/cv.pdf`. The subsequently imported editable TeX project is maintained in `cv/source/` under the workflow in `AGENTS.md`.
+
+The user designated the new TeX assets as the current reference and requested a website-only alignment for this import. The website now includes Codeforces rating 2715 and the International Grandmaster title from the active TeX achievements section. The Awards page renders the same shared entry as the CV. The TeX source remains unchanged; the public PDF is still the legacy copy and has not been rebuilt. Future CV requests update the website and TeX together unless explicitly limited by the user.
 
 Reinventing the Wheel and PS Checklist each have a project page and an illustrative SVG for the project listing. Their descriptions use the current local project documentation. PS Checklist is described as a beta with a JavaScript frontend, Python services, and Supabase. Its authenticated preview address is omitted from the public site.
 
@@ -31,10 +33,16 @@ The GitHub Actions workflow builds the personal branch and `main`. Publication t
 
 - Update current affiliation, university dates, GPA, internship details, and any achievements after the supplied CV.
 - Add a portrait if desired. The initial homepage uses a text profile.
-- Add a confirmed Codeforces profile link and rating date before publishing a numeric rating. The initial site uses the CV's International Grandmaster title.
+- Add a confirmed Codeforces profile link and a date or peak label if supplied later. The displayed rating 2715 follows the user's designated TeX reference and is not labeled current or peak.
 - The Reinventing the Wheel public homepage previously showed placeholder text; review its deployment before launch.
 
-## Validation
+## CV import build
+
+After the source import, the production Jekyll build completed successfully. The generated CV and Awards pages both contain the shared Codeforces rating 2715. The generated `cv/` directory contains only the website's `index.html`, with the editable source and archive excluded. The existing PDF links now use `/assets/pdf/cv.pdf`. The port 1111 preview service was restarted to apply the exclusion and is running.
+
+No TeX build was performed. The validation below records the earlier site implementation checks; those checks were not rerun for this content import.
+
+## Initial site validation
 
 - The production Jekyll build passed using the pinned dependencies in a Ruby 3.3 Docker container. The host Ruby installation lacks development headers, so validation used the container instead.
 - The repository-wide Prettier check and upstream starter style contract passed.

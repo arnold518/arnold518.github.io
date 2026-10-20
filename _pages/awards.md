@@ -17,7 +17,9 @@ nav_order: 2
 | {{ award.date }} | {{ award.title }} | {{ award.summary }} |
 {% endfor %}
 
-**Codeforces:** International Grandmaster.
+{% for entry in site.data.cv.cv.sections['Competitive Programming'] %}
+**{{ entry.label }}:** {{ entry.details }}
+{% endfor %}
 
 ## Research awards
 

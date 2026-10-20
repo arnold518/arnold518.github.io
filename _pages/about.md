@@ -16,7 +16,7 @@ I study computer science and engineering at Seoul National University. My intere
 
 I competed with **NewTrend**, winning a **bronze medal at the 48th ICPC World Finals** and the **2024 ICPC Asia Pacific Championship**. I also build software and write notes to explore how things work, from digital logic and processors to algorithms and mathematics.
 
-[CV]({{ '/cv/' | relative_url }}) · [Download PDF]({{ '/CV_20240314.pdf' | relative_url }}) · [GitHub](https://github.com/arnold518) · [Email](mailto:arnoldpark03@gmail.com)
+[CV]({{ '/cv/' | relative_url }}) · [Download PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}) · [GitHub](https://github.com/arnold518) · [Email](mailto:arnoldpark03@gmail.com)
 
 ## Selected achievements
 
