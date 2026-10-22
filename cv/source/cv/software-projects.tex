@@ -1,5 +1,6 @@
-% Draft descriptions mirror cv.sections.Projects in _data/cv.yml.
+% Approved descriptions mirror cv.sections.Projects in _data/cv.yml.
 % Keep shared project claims synchronized when editing either format.
+% PS Checklist is intentionally website-only; see AGENTS.md.
 \cvsection{PROJECTS}
 
 \begin{cventries}
@@ -8,20 +9,10 @@
     {\href{https://github.com/arnold518/reinventing-the-wheel}{Source code}}
     {
       \begin{cvitems}
-        \item {CircuitSim, a digital logic simulator that builds from gates and arithmetic circuits through memory systems to single-cycle and pipelined RV32I processors.}
-        \item {Interactive circuit examples and component documentation.}
-        \item {Timing models and experiments comparing processor implementations.}
-      \end{cvitems}
-    }
-
-  \cventry
-    {\href{https://arnold518.github.io/projects/ps-checklist/}{PS Checklist}}
-    {\href{https://github.com/arnold518/ps-checklist}{Source code}}
-    {
-      \begin{cvitems}
-        \item {A beta application for organizing programming contests, tracking problem progress, and recording practice sessions.}
-        \item {ICPC and Olympiad catalogs, with Codeforces and AtCoder contest imports.}
-        \item {Shared problem status, dated practice records, and a workflow for curating contest resources.}
+        \item {Developed a hardware simulation platform that makes the internal behavior of CPUs, memory systems, and I/O devices observable, from individual logic gates to complete systems executing programs.}
+        \item {Implemented ALUs, memory models spanning flip-flops, SRAM, and DRAM, cache hierarchies, and RV32I/RV32IM processors, integrating memory-mapped I/O to run compiled C game workloads. Future directions include AI accelerators and general-purpose GPUs.}
+        \item {Designed the platform for computer architecture research, enabling controlled comparisons of processor designs, cache policies, and memory technologies under realistic gate and device timing models.}
+        \item {Built an event-driven C++20 engine with structural and behavioral models, gate-derived delay tables, and graph-based computation of safe clock periods.}
       \end{cvitems}
     }
 \end{cventries}

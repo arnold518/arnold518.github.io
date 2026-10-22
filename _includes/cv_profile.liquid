@@ -2,7 +2,7 @@
 <article class="cv-document" aria-labelledby="cv-name">
   <header class="cv-header">
     <div class="cv-identity">
-      <p class="cv-eyebrow">Curriculum vitae</p>
+      <p class="cv-eyebrow">Curriculum Vitae</p>
       <h1 id="cv-name">{{ cv.name | escape }}</h1>
       <ul class="cv-contact" role="list">
         <li>
@@ -43,10 +43,10 @@
 
   <nav class="cv-navigation" aria-label="CV sections">
     <a href="#education">Education</a>
+    <a href="#awards">Achievements</a>
     <a href="#experience">Experience</a>
-    <a href="#research">Research</a>
     <a href="#projects">Projects</a>
-    <a href="#awards">Awards</a>
+    <a href="#research">Research</a>
     <a href="#skills">Skills</a>
   </nav>
 
@@ -78,6 +78,16 @@
     {% endfor %}
   </section>
 
+  <section class="cv-section" id="awards" aria-labelledby="cv-awards-heading">
+    <h2 id="cv-awards-heading">Achievements</h2>
+    <h3 class="cv-award-category">Competitive Programming</h3>
+    {% assign ps_awards = cv.sections.Awards | where: 'category', 'competitive-programming' %}
+    {% include cv_awards.liquid awards=ps_awards %}
+    <h3 class="cv-award-category">Research &amp; Hackathon Awards</h3>
+    {% assign research_awards = cv.sections.Awards | where: 'category', 'research-hackathon' %}
+    {% include cv_awards.liquid awards=research_awards %}
+  </section>
+
   <section class="cv-section" id="experience" aria-labelledby="cv-experience-heading">
     <h2 id="cv-experience-heading">Experience</h2>
     {% for entry in cv.sections.Experience %}
@@ -94,23 +104,6 @@
             {% endfor %}
           </ul>
         {% endif %}
-      </div>
-    {% endfor %}
-  </section>
-
-  <section class="cv-section" id="research" aria-labelledby="cv-research-heading">
-    <h2 id="cv-research-heading">Research</h2>
-    {% for entry in cv.sections.Research %}
-      <div class="cv-entry">
-        <div class="cv-entry-header">
-          <h3>{{ entry.title | escape }}</h3>
-          <span class="cv-date cv-entry-date">{% include cv_dates.liquid entry=entry %}</span>
-        </div>
-        <ul class="cv-highlights">
-          {% for highlight in entry.highlights %}
-            <li>{{ highlight | escape }}</li>
-          {% endfor %}
-        </ul>
       </div>
     {% endfor %}
   </section>
@@ -144,14 +137,21 @@
     {% endfor %}
   </section>
 
-  <section class="cv-section" id="awards" aria-labelledby="cv-awards-heading">
-    <h2 id="cv-awards-heading">Awards</h2>
-    <h3 class="cv-award-category">Competitive programming</h3>
-    {% assign ps_awards = cv.sections.Awards | where: 'category', 'competitive-programming' %}
-    {% include cv_awards.liquid awards=ps_awards %}
-    <h3 class="cv-award-category">Research awards</h3>
-    {% assign research_awards = cv.sections.Awards | where: 'category', 'research' %}
-    {% include cv_awards.liquid awards=research_awards %}
+  <section class="cv-section" id="research" aria-labelledby="cv-research-heading">
+    <h2 id="cv-research-heading">Research</h2>
+    {% for entry in cv.sections.Research %}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <h3>{{ entry.title | escape }}</h3>
+          <span class="cv-date cv-entry-date">{% include cv_dates.liquid entry=entry %}</span>
+        </div>
+        <ul class="cv-highlights">
+          {% for highlight in entry.highlights %}
+            <li>{{ highlight | escape }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
   </section>
 
   <section class="cv-section" id="skills" aria-labelledby="cv-skills-heading">

@@ -6,22 +6,22 @@ The supplied TeX assets are the current reference for personal CV facts. The old
 
 ## Files
 
-| Path                              | Purpose                                                                                         |
-| --------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `source/resume.tex`               | Main TeX document, header, layout settings, and section inclusion order                         |
-| `source/russell.cls`              | CV document class and formatting                                                                |
-| `source/cv/education.tex`         | Education and coursework                                                                        |
-| `source/cv/achievements.tex`      | Competitive programming results, research awards, and Codeforces information                    |
-| `source/cv/projects.tex`          | Research projects; this original filename refers to the research section                        |
-| `source/cv/software-projects.tex` | Reinventing the Wheel and PS Checklist, matching the website's project summaries and highlights |
-| `source/cv/experience.tex`        | Internships and teaching experience                                                             |
-| `source/cv/skills.tex`            | Programming skills                                                                              |
-| `source/cv/fonts/`                | Fonts included in the supplied source archive                                                   |
-| `archive/CV_20240314.zip`         | Unmodified original source archive                                                              |
-| `archive/CV_20240314.pdf`         | Unmodified original PDF                                                                         |
-| `../assets/pdf/cv.pdf`            | Public downloadable PDF compiled from the current working TeX source                            |
-| `build.sh`                        | Shared local and GitHub Actions compilation script                                              |
-| `build/`                          | Ignored temporary LaTeX output                                                                  |
+| Path                              | Purpose                                                                      |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| `source/resume.tex`               | Main TeX document, header, layout settings, and section inclusion order      |
+| `source/russell.cls`              | CV document class and formatting                                             |
+| `source/cv/education.tex`         | Education and coursework                                                     |
+| `source/cv/achievements.tex`      | Competitive programming results, research awards, and Codeforces information |
+| `source/cv/projects.tex`          | Research projects; this original filename refers to the research section     |
+| `source/cv/software-projects.tex` | Reinventing the Wheel, matching the website's project summary and highlights |
+| `source/cv/experience.tex`        | Internships and teaching experience                                          |
+| `source/cv/skills.tex`            | Programming skills                                                           |
+| `source/cv/fonts/`                | Fonts included in the supplied source archive                                |
+| `archive/CV_20240314.zip`         | Unmodified original source archive                                           |
+| `archive/CV_20240314.pdf`         | Unmodified original PDF                                                      |
+| `../assets/pdf/cv.pdf`            | Public downloadable PDF compiled from the current working TeX source         |
+| `build.sh`                        | Shared local and GitHub Actions compilation script                           |
+| `build/`                          | Ignored temporary LaTeX output                                               |
 
 The original archive also contains optional sections and commented examples from the template. Only the active inputs in `source/resume.tex` are part of the CV. Those examples do not establish personal facts.
 
@@ -31,9 +31,19 @@ The website's CV and award data live in `../_data/cv.yml`. The biography and sel
 
 The web CV uses the site-owned `../_includes/cv_profile.liquid` with styles scoped to `.cv-document` in `../assets/css/cv.css`. It reads the shared data directly, with research represented by `title`, `date`, and `highlights`. The date and award helpers control presentation; keep personal claims out of the templates. Changes to the website's layout or data structure alone do not change the TeX content or require a local PDF rebuild.
 
+Both CVs present sections in this order: **Education → Achievements → Experience → Projects → Research → Skills**. The website's section navigation follows that order; Achievements retains the `#awards` anchor and `Awards` data key. In the PDF, Education, Achievements, Experience, and Projects occupy page one, with Research and Skills on page two.
+
 For example, an award update changes both `_data/cv.yml` and `source/cv/achievements.tex`. A research update changes the website CV and `source/cv/projects.tex`. Website project pages can provide more detail than the printed CV; shared names, dates, results, and claims must agree.
 
+Shared website award titles match the PDF's bold titles exactly, including the full ICPC World Finals name and contest years. The PDF groups achievements into Competitive Programming, preserving the existing ICPC-first order, and Research & Hackathon Awards, ordered by newest year. The latter includes Nexon Young Programmers Cup 2026 — Master Track (Bronze Prize, 9th place), 2026 Korea Quantum Information Competition (Director’s Award, 3rd place), and the Samsung Humantech awards. The website uses category `research-hackathon` for this group. The quantum entry intentionally omits the awarding center and team name.
+
+Capitalization follows [AGENTS.md](../AGENTS.md): headings, research titles, and award labels use title case; rankings use lowercase `place`; descriptive prose uses sentence case. Examples are `9th place (Bronze Medal)`, `1st place (Champion)`, and `Bronze Prize (9th place)`. Preserve official names/acronyms and team casing. The PDF's uppercase main headings are a presentation choice; shared entry wording follows the same rules as the website.
+
 Software project updates pair `cv.sections.Projects` in `_data/cv.yml` with `source/cv/software-projects.tex`, and update the related `_projects/` page when affected. The initial project descriptions copy the website CV's summaries and highlights as a draft for later editing. Project titles link to their website detail pages, and source links open their repositories. No project dates are inferred.
+
+PS Checklist is a persistent exception: it remains in the website CV and project pages but is excluded from the TeX CV and compiled PDF. Preserve this difference during future synchronization unless the user explicitly asks to include it in the PDF again, as recorded in [AGENTS.md](../AGENTS.md).
+
+Google Code Jam 2021 (Round 3, 196th place) and Google Kick Start 2020 (Round B, 28th place) are also intentionally excluded from the TeX CV and compiled PDF. Keep both results in the website CV and Awards page, and preserve this exception during future synchronization unless the user explicitly requests their return to the PDF.
 
 Keep the TeX and website independently editable. Synchronization is performed by the agent as part of the requested edit, rather than by a YAML-to-TeX generator.
 
@@ -91,6 +101,12 @@ The website now uses the source's Codeforces rating **2715** and International G
 
 ## Project descriptions added on 2026 10 21
 
-The current PDF includes a Projects section with Reinventing the Wheel and PS Checklist. Its draft explanations match the existing website CV's project summaries and highlights, including PS Checklist's beta status. Edit these in `source/cv/software-projects.tex` alongside the website data when refining them.
+The initial Projects section included Reinventing the Wheel and PS Checklist, with draft explanations matching the website CV's project summaries and highlights. PS Checklist was subsequently removed from the PDF at the user's request and remains on the website. Refine the remaining project's descriptions in `source/cv/software-projects.tex` alongside the website data.
 
-The CV now has two pages. `source/resume.tex` starts Projects on the second page, followed by Experience and Skills, keeping the new explanations together. Both pages were rendered and reviewed after a successful `./cv/build.sh` build before replacing the public PDF.
+The CV has two pages. The original layout started Projects on the second page, followed by Experience and Skills. The current layout places Experience and Projects after Achievements on page one, with Research and Skills on page two. An explicit page break follows Projects. Review both pages after building with `./cv/build.sh` before replacing the public PDF.
+
+## CircuitSim description revised on 2026 10 23
+
+The Reinventing the Wheel entry now uses four approved points in both CVs: hardware observability, implemented hardware and future directions, the computer architecture research purpose, and the event-driven C++20 engine with structural/behavioral models, gate-derived delay tables, and graph-based safe clock computation. The website CV's summary and three highlights match the TeX's four bullets word for word.
+
+The dedicated project page expands those points using the local CircuitSim source and current records. It distinguishes scripted game execution and recorded playback from planned live sessions, and identifies AI accelerators and general-purpose GPUs as future directions. PS Checklist remains website-only.

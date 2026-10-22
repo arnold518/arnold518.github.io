@@ -2,12 +2,12 @@
 layout: page
 title: Awards
 permalink: /awards/
-description: Competitive programming achievements and research awards.
+description: Competitive programming achievements and research & hackathon awards.
 nav: true
 nav_order: 2
 ---
 
-## Competitive programming
+## Competitive Programming
 
 {% assign ps_awards = site.data.cv.cv.sections.Awards | where: 'category', 'competitive-programming' %}
 
@@ -21,9 +21,9 @@ nav_order: 2
 **{{ entry.label }}:** {{ entry.details }}
 {% endfor %}
 
-## Research awards
+## Research & Hackathon Awards
 
-{% assign research_awards = site.data.cv.cv.sections.Awards | where: 'category', 'research' %}
+{% assign research_awards = site.data.cv.cv.sections.Awards | where: 'category', 'research-hackathon' %}
 
 | Year | Award | Result |
 | ---- | ----- | ------ |
