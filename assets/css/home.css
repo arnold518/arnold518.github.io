@@ -1,0 +1,140 @@
+.home-profile {
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.home-profile a:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+}
+
+.home-profile .home-intro {
+  font-size: 1.05rem;
+}
+
+.home-profile .home-links,
+.home-profile .home-project-links,
+.home-profile .home-blog-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+}
+
+.home-profile .home-links {
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+
+.home-profile .home-cv-link {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.3rem;
+  padding: 0.35rem 0.8rem;
+}
+
+.home-profile .home-cv-link:hover {
+  border-color: var(--global-theme-color);
+}
+
+.home-profile .home-section {
+  clear: both;
+  margin-top: 2.25rem;
+  scroll-margin-top: 5rem;
+}
+
+.home-profile h2 {
+  margin: 0 0 1.1rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-profile h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.home-profile .home-awards,
+.home-profile .home-blog-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-profile .home-awards li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.home-profile .home-awards p,
+.home-profile .home-role {
+  margin: 0.15rem 0 0.5rem;
+}
+
+.home-profile .home-date,
+.home-profile .home-role {
+  color: var(--global-text-color);
+  color: color-mix(in srgb, var(--global-text-color) 75%, var(--global-bg-color));
+  font-size: 0.9rem;
+}
+
+.home-profile .home-date {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.home-profile .home-entry + .home-entry {
+  margin-top: 1.5rem;
+}
+
+.home-profile .home-entry > p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.home-profile .home-entry-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+}
+
+.home-profile .home-entry-heading h3 {
+  min-width: 0;
+}
+
+.home-profile .home-distinction {
+  margin: 1.1rem 0 0.5rem;
+}
+
+.home-profile .home-more,
+.home-profile .home-project-links {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 575px) {
+  .home-profile .home-intro {
+    font-size: 1rem;
+  }
+
+  .home-profile .home-section {
+    margin-top: 1.75rem;
+  }
+
+  .home-profile .home-entry-heading {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .home-profile .home-awards li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
